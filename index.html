@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khairul Azzam | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #090b16;
+    color: white;
+}
+
+header {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d1020;
+    border-bottom: 1px solid #22243a;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.logo span,
+.section-title span,
+.home h1 span {
+    color: #a78bfa;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #c5c5d2;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #a78bfa;
+}
+
+section {
+    padding: 120px 10%;
+    min-height: 100vh;
+}
+
+.section-title {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #85869a;
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+/* BERANDA */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.small-title {
+    color: #a78bfa;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.home h1 {
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.home h3 {
+    color: #c5c5d2;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.home p {
+    color: #9293a7;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.profile-box {
+    padding: 12px;
+    background: #17172a;
+    border: 1px solid #383052;
+    border-radius: 25px;
+}
+
+.profile {
+    width: 280px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: #a78bfa;
+    color: #090b16;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* TENTANG */
+.about-box {
+    background: #111426;
+    border: 1px solid #272943;
+    padding: 35px;
+    border-radius: 22px;
+}
+
+.about-box p {
+    color: #a3a4b5;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* PENDIDIKAN */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 22px;
+}
+
+.card {
+    background: #111426;
+    padding: 30px;
+    border: 1px solid #272943;
+    border-radius: 16px;
+}
+
+.card .number {
+    color: #a78bfa;
+    font-size: 13px;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+}
+
+.card p {
+    color: #9293a7;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* KEAHLIAN */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 22px;
+}
+
+.skill-card {
+    min-height: 225px;
+    padding: 26px;
+    background: linear-gradient(145deg,#171a31,#101326);
+    border: 1px solid #34304f;
+    border-radius: 20px;
+}
+
+.skill-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    background: #282342;
+    border: 1px solid #514276;
+    border-radius: 15px;
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.skill-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 12px;
+    color: #9b9caf;
+    line-height: 1.7;
+}
+
+.skill-progress {
+    margin-top: 18px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+    font-size: 12px;
+    color: #c4b5fd;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 9px;
+    background: #282342;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg,#8b5cf6,#c4b5fd);
+    border-radius: 20px;
+}
+
+/* MY PORTFOLIO - UKURAN DIPERBESAR */
+.project {
+    background: #111426;
+    border: 1px solid #272943;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 390px;
+}
+
+.project-img {
+    height: 230px;
+    background: #202039;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+    font-size: 45px;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 30px;
+}
+
+.project-info h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project-info p {
+    color: #9293a7;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* KONTAK */
+.contact-box {
+    background: #111426;
+    border: 1px solid #272943;
+    padding: 35px;
+    border-radius: 18px;
+    max-width: 650px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 18px;
+    background: #090b16;
+    border: 1px solid #303149;
+    border-radius: 9px;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #a78bfa;
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+button {
+    padding: 14px 30px;
+    background: #a78bfa;
+    color: #090b16;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #0d1020;
+    border-top: 1px solid #22243a;
+    color: #85869a;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 5%;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 160px;
+    }
+
+    .home h1 {
+        font-size: 35px;
+    }
+
+    .profile {
+        width: 220px;
+        height: 260px;
+    }
+
+    section {
+        padding: 120px 7% 70px;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">@_alboys.<span>acill27</span></div>
+    <nav>
+        <a href="#beranda">BERANDA</a>
+        <a href="#tentang">TENTANG</a>
+        <a href="#pendidikan">PENDIDIKAN</a>
+        <a href="#keahlian">KEAHLIAN</a>
+        <a href="#portofolio">PORTOFOLIO</a>
+        <a href="#kontak">KONTAK</a>
+    </nav>
+</header>
+
+<section class="home" id="beranda">
+    <div class="home-content">
+        <div class="small-title">WELCOME TO MY WEBSITE</div>
+        <h1>Hi, I'm <span>Muhammad Khairul Azzam</span></h1>
+        <h3>Student & Creative Person</h3>
+        <p>
+            Azzam adalah seseorang yang memiliki semangat tinggi
+            dalam bidang olahraga dan senang mengikuti berbagai
+            perlombaan olahraga. Saya senang mengembangkan
+            kemampuan dalam futsal, voli, tenis meja, bulu tangkis,
+            dan olahraga lainnya.
+        </p>
+        <a href="#tentang" class="btn">MORE ABOUT ME</a>
+    </div>
+
+    <div class="profile-box">
+        <img src="2 acill.jpeg" class="profile" alt="Foto Khairul Azzam">
+    </div>
+</section>
+
+<section id="tentang">
+    <h2 class="section-title">About <span>Me.</span></h2>
+    <p class="subtitle">Kenali saya lebih dekat</p>
+    <div class="about-box">
+        <p>
+            Halo! Perkenalkan, saya adalah seseorang yang memiliki
+            hobi di bidang olahraga. Saya senang bermain futsal,
+            voli, tenis meja, padel, dan biliar.
+            <br><br>
+            Saya memiliki semangat tinggi dalam mencoba hal-hal
+            baru, menyukai tantangan, serta senang belajar dan
+            mengembangkan kemampuan diri.
+        </p>
+    </div>
+</section>
+
+<section id="pendidikan">
+    <h2 class="section-title">Riwayat <span>Pendidikan.</span></h2>
+    <p class="subtitle">Perjalanan pendidikan saya</p>
+
+    <div class="grid">
+        <div class="card">
+            <div class="number">01 / EDUCATION</div>
+            <h3>Sekolah Menengah Pertama</h3>
+            <p>Pondok Pesantren Darul Ikhlas.</p>
+            <p>2023 - 2026</p>
+        </div>
+
+        <div class="card">
+            <div class="number">02 / EDUCATION</div>
+            <h3>Sekolah Menengah Kejuruan</h3>
+            <p>SMK Daruss'aadah.</p>
+            <p>2026 - 2029</p>
+        </div>
+    </div>
+</section>
+
+<section id="keahlian">
+    <h2 class="section-title">Keahlian <span>Saya.</span></h2>
+    <p class="subtitle">Kemampuan dan olahraga yang saya sukai</p>
+
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>HTML</h3>
+            <p>Membuat struktur dan konten dasar website.</p>
+            <div class="skill-progress">
+                <div class="progress-info"><span>HTML</span><span>70%</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>Mengatur tampilan website agar rapi dan menarik.</p>
+            <div class="skill-progress">
+                <div class="progress-info"><span>CSS</span><span>65%</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🖌️</div>
+            <h3>Graphic Design</h3>
+            <p>Membuat desain visual yang kreatif dan menarik.</p>
+            <div class="skill-progress">
+                <div class="progress-info"><span>DESIGN</span><span>70%</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">⚽</div>
+            <h3>Futsal</h3>
+            <p>Melatih kerja sama tim, strategi, dan sportivitas.</p>
+            <div class="skill-progress">
+                <div class="progress-info"><span>FUTSAL</span><span>90%</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:99%"></div></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🏐</div>
+            <h3>Voli</h3>
+            <p>Mengembangkan koordinasi dan kekompakan tim.</p>
+            <div class="skill-progress">
+                <div class="progress-info"><span>VOLI</span><span>100%</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🏓</div>
+            <h3>Tenis Meja</h3>
+            <p>Melatih fokus, ketepatan, dan kecepatan reaksi.</p>
+            <div class="skill-progress">
+                <div class="progress-info"><span>TENIS MEJA</span><span>85%</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🏸</div>
+            <h3>Olahraga Raket</h3>
+            <p>Menyukai olahraga menggunakan raket dan melatih kelincahan.</p>
+            <div class="skill-progress">
+                <div class="progress-info"><span>RAKET</span><span>99%</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:99%"></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portofolio">
+    <h2 class="section-title">My <span>Portfolio.</span></h2>
+    <p class="subtitle">Beberapa karya dan proyek saya</p>
+
+    <div class="grid">
+        <div class="project">
+            <div class="project-img">✦</div>
+            <div class="project-info">
+                <h3>Personal Website</h3>
+                <p>Website portofolio pribadi dengan desain modern.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-img">
+                <img src="𝓼𝓽𝓪𝓻𝓫𝓾𝓬𝓴.jpg" alt="Desain kopi">
+            </div>
+            <div class="project-info">
+                <h3>Graphic Design</h3>
+                <p>Karya desain grafis kreatif dan menarik.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-img">⌘</div>
+            <div class="project-info">
+                <h3>Web Design</h3>
+                <p>Konsep desain website dengan tampilan minimalis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kontak">
+    <h2 class="section-title">Hubungi <span>Saya.</span></h2>
+    <p class="subtitle">Mari terhubung dan berkomunikasi</p>
+
+    <div class="contact-box">
+        <form onsubmit="kirimPesan(event)">
+            <input type="text" id="nama" placeholder="Nama lengkap" required>
+            <input type="email" id="email" placeholder="Alamat email" required>
+            <textarea id="pesan" placeholder="Tulis pesan kamu..." required></textarea>
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 KHAIRUL AZZAM. ALL RIGHTS RESERVED.</p>
+</footer>
+
+<script>
+function kirimPesan(event) {
+    event.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const email = document.getElementById("email").value;
+    const pesan = document.getElementById("pesan").value;
+
+    const subject = encodeURIComponent("Pesan dari " + nama);
+
+    const body = encodeURIComponent(
+        "Nama: " + nama +
+        "\nEmail: " + email +
+        "\nPesan: " + pesan
+    );
+
+    window.location.href =
+        "mailto:emailkamu@gmail.com?subject=" +
+        subject + "&body=" + body;
+}
+</script>
+
+</body>
+</html>
+
+
